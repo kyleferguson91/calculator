@@ -1,0 +1,29 @@
+.calulatorbody {
+    width: 80vw;
+    height: 80vh;
+    border: 2px solid black;
+    padding: 40px;
+}
+
+.screen {
+    border: 2px solid red;
+    height: 20%;
+    margin-bottom: 40px;
+}
+
+button {
+    width: 202px;
+    height: 55px
+}
+
+.buttons {
+    display: flex;
+    flex-flow: tow wrap;
+    border: 2px none green;
+}
+
+.operators {
+    border: 3px none orange;
+    display: flex-box;
+    flex-flow: row-wrap;    
+}
