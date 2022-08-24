@@ -1,29 +1,72 @@
 .calulatorbody {
-    width: 80vw;
+    width: 800px;
+    margin: auto;
     height: 80vh;
     border: 2px solid black;
     padding: 40px;
+    background-color: silver;
 }
 
 .screen {
     border: 2px solid red;
     height: 20%;
     margin-bottom: 40px;
+    
+    text-align: right;
+    background-color: bisque;
+}
+
+.screen p {
+    color: black;
+    font-size: 50px;
 }
 
 button {
-    width: 202px;
-    height: 55px
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 .buttons {
-    display: flex;
-    flex-flow: tow wrap;
-    border: 2px none green;
+    display: flexbox;
+    flex: row wrap ;
+    border: 2px dashed green;
+    height: 575px;
+    width: auto;
+    
 }
 
 .operators {
-    border: 3px none orange;
-    display: flex-box;
-    flex-flow: row-wrap;    
+display: block;
+border: 2px solid white;
+width: 300px;
+
+}
+
+.last {
+    margin-right: auto  ;
+}
+
+.operators button {
+    height: 150px;
+    width: 100px;
+}
+
+.numbers {
+    border: 2px solid red;
+    max-width: 480px;
+    display: flexbox;
+   
+    
+}
+
+.numbers button {
+    
+    width: 150px;
+    height: 100px;
+}
+
+body {
+    background-color: grey;
 }
