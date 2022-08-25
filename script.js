@@ -97,9 +97,11 @@ window.addEventListener("keydown", e => {
         current = input.join("")
         value1 = +value1
         current = +current
-            document.getElementById("dec").setAttribute("disabled", "false")
+           
             operate(operand, value1, current)
             innerline.textContent += ` ${current}`
+            if( screen.textContent.indexOf(".") >= 0) {document.getElementById("dec").setAttribute("disabled", "true")}
+            else if ( screen.textContent.indexOf(".") < 0) {document.getElementById("dec").removeAttribute("disabled")}
     }
 
     else if (e.key == "Backspace") {
@@ -140,17 +142,18 @@ window.addEventListener("keydown", e => {
 
 
     else if (e.key == ".") {
-        console.log("dont add")
      
-        if (input.indexOf(".") >= 0 || screen.textContent.indexOf(".") >=0 || current.indexOf("." >= 0)) {
-            screen.textContent == screen.textContent
+     
+        if (input.indexOf(".") >= 0 || screen.textContent.indexOf(".") >=0 ) {
+            screen.textContent = screen.textContent
             
 
         }
 
 
         else {  
-             screen.textContent += e.key
+             screen
+             .textContent += e.key
             input.push(e.key)
  
             document.getElementById("dec").setAttribute("disabled", "true")}
@@ -264,8 +267,9 @@ buttons.forEach((elem, ind, arr) => {
 
 
             console.log(input)
-            document.getElementById("dec").setAttribute("disabled", "false")
-
+            
+            if(current.indexOf(".") >= 0) {document.getElementById("dec").removeAttribute("disabled")}
+            else if (current.indexOf(".") < 0) {document.getElementById("dec").setAttribute("disabled", "true")}
             innerline.textContent += `${current}`
 
 
