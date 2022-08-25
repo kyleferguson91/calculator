@@ -1,5 +1,5 @@
 .calulatorbody {
-    width: 800px;
+    width: 600px;
     margin: auto;
     height: 80vh;
     border: 2px solid black;
@@ -10,7 +10,7 @@
 .screen {
     border: 2px solid red;
     height: 20%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     text-align: right;
     background-color: bisque;
@@ -61,7 +61,11 @@ button {
 }
 
 #foo {
-    height: 50px;
+    height: 250px;
+}
+
+#zero {
+    width: 458px;
 }
 
 #equals {
@@ -73,6 +77,7 @@ button {
 .numbers {
     border: 2px none red;
     max-width: 480px;
+ 
    display: flexbox;
    justify-content: space-between;
 
@@ -87,4 +92,38 @@ button {
 
 body {
     background-color: grey;
+}
+
+.newcontainer {
+    border: 2px none red;
+    display: inline-flex;
+    flex-flow: row wrap;
+    gap: 25.2px
+}
+.newbutton {
+    border: none;
+border-radius: 50%;
+    width: 130px;
+    height: 100px;
+    background-color: white;
+    font-size:30px;
+    font-weight: bolder;
+    
+}
+
+.functions {
+    background-color: burlywood;
+}
+
+.nums {
+    background-color: teal;
+}
+
+.grower {
+    flex-grow: 1; 
+    margin: 0;
+}
+
+.operators {
+    background-color: orange;
 }
