@@ -11,7 +11,7 @@
     border: 2px solid red;
     height: 20%;
     margin-bottom: 40px;
-    
+
     text-align: right;
     background-color: bisque;
 }
@@ -26,43 +26,61 @@ button {
     height: auto;
     font-size: 20px;
     font-weight: bolder;
+    
 }
 
 .buttons {
-    display: flexbox;
-    flex: row wrap ;
-    border: 2px dashed green;
+    display: inline-flex;
+    flex: row wrap;
+    border: 2px none green;
     height: 575px;
     width: auto;
     
+    flex-shrink: 3;
+
 }
 
 .operators {
-display: block;
-border: 2px solid white;
-width: 300px;
+    display: block;
+    border: 2px none white;
+ 
 
+}
+.operators button {
+    background-color: orange;
 }
 
 .last {
-    margin-right: auto  ;
+    margin-right: auto;
 }
 
 .operators button {
+    width: 150px;
+    height: 100px;
+
+}
+
+#foo {
+    height: 50px;
+}
+
+#equals {
+    width: 304px;
     height: 150px;
-    width: 100px;
+    background-color: red;
 }
 
 .numbers {
-    border: 2px solid red;
+    border: 2px none red;
     max-width: 480px;
-    display: flexbox;
-   
-    
+   display: flexbox;
+   justify-content: space-between;
+
+
 }
 
 .numbers button {
-    
+
     width: 150px;
     height: 100px;
 }
