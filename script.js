@@ -94,14 +94,21 @@ window.addEventListener("keydown", e => {
         e.cancelBubble = true;
         
         e.preventDefault()
+
         current = input.join("")
         value1 = +value1
         current = +current
            
             operate(operand, value1, current)
-            innerline.textContent += ` ${current}`
+           
+            if (innerline.textContent.includes(`${current}`)) {innerline.textContent = innerline.textContent}
+
+            else {innerline.textContent += ` ${current}`}
+            
             if( screen.textContent.indexOf(".") >= 0) {document.getElementById("dec").setAttribute("disabled", "true")}
             else if ( screen.textContent.indexOf(".") < 0) {document.getElementById("dec").removeAttribute("disabled")}
+
+            
     }
 
     else if (e.key == "Backspace") {
