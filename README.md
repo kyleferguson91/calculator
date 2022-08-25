@@ -28,3 +28,84 @@
 
             </div>
         </div>
+
+        window.addEventListener('', e => {
+    console.log(e.key, "key")
+    {
+
+
+
+
+        let displayValue = e.key
+
+        if (e.key == "AC") {
+            document.getElementById("dec").setAttribute("disabled", "false")
+            screen.textContent = ""
+            input = []
+            console.log(input)
+            operand = "";
+            value1 = "";
+            current = "";
+
+        }
+
+
+        else if (e.key == ".") {
+            screen.textContent += e.key
+            input.push(e.key)
+            console.log(input)
+            document.getElementById("dec").setAttribute("disabled", "true")
+            //document.querySelector(".newcontainer").removeChild(decimal)
+        }
+
+
+
+
+        else if (
+            e.key == "+" ||
+            e.key == "-" ||
+            e.key == "*" ||
+            e.key == "/" ||
+            e.key == "%") {
+            document.getElementById("dec").removeAttribute("disabled")
+            value1 = screen.textContent;
+            operand = e.key;
+
+            input.push(e.key)
+            screen.textContent = ""
+
+            input = []
+
+
+
+
+        }
+
+
+
+        else if (e.key == "Enter") {
+
+            current = input.join("")
+            console.log(operand, value1, current, "operand, value1, current")
+            value1 = +value1
+            current = +current
+            operate(operand, value1, current)
+            document.getElementById("dec").setAttribute("disabled", "false")
+
+
+        }
+
+        else {
+            screen.textContent += e.key
+            input.push(e.target.textContent)
+            console.log(input)
+        }
+
+
+
+
+
+    }
+
+
+})
