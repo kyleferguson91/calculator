@@ -3,9 +3,12 @@ const screen = document.querySelector(".screentexts")
 
 
 function add (a,b) {
-    console.log(+a + +b)
-    screen.textContent = (+a + +b)
-    return +a + +b
+    console.log(+a + +b);
+    screen.textContent =  parseFloat((+a + +b).toFixed(7))
+
+  
+
+    return (+a + +b)
 }
 
 function subtract (a,b) {
@@ -130,6 +133,65 @@ window.addEventListener('', e => {
 
 })
 
+window.addEventListener("keypress", e=> {
+
+
+
+if (!isNaN(parseInt(e.key))) {
+    console.log(e.key)
+    if (screen.textContent == "0") {screen.textContent = ""}
+    screen.textContent += e.key
+    input.push(e.key)
+    console.log(input)
+
+}
+
+else if (e.key == "Enter") {
+    console.log("enter here")
+    current = input.join("")
+    console.log(operand,value1,current, "operand, value1, current")
+    value1 = +value1
+    current = +current
+    operate(operand, value1, current ) 
+    document.getElementById("dec").setAttribute("disabled", "false")
+ 
+
+}
+
+else if (e.key == "+" ||
+        e.key == "-" ||
+        e.key == "/" ||
+        e.key == "*")
+        {
+            console.log("operator")
+            document.getElementById("dec").removeAttribute("disabled")
+            value1 = screen.textContent;
+            operand = e.key;
+
+            input.push(e.key)
+            screen.textContent = "" 
+          
+            input = []  
+      
+
+
+
+
+        }
+
+
+else if (e.key == ".") {
+console.log("decimal here")
+screen.textContent += e.key
+input.push(e.key)
+console.log(input)
+document.getElementById("dec").setAttribute("disabled", "true")
+
+
+}
+
+
+})
 
 
 
