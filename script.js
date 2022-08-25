@@ -140,10 +140,11 @@ window.addEventListener("keydown", e => {
 
 
     else if (e.key == ".") {
-        console.log("decimal here")
+        console.log("dont add")
      
-        if (input.indexOf(".") >= 0 || screen.textContent.indexOf(".") >=0) {
+        if (input.indexOf(".") >= 0 || screen.textContent.indexOf(".") >=0 || current.indexOf("." >= 0)) {
             screen.textContent == screen.textContent
+            
 
         }
 
@@ -151,6 +152,7 @@ window.addEventListener("keydown", e => {
         else {  
              screen.textContent += e.key
             input.push(e.key)
+ 
             document.getElementById("dec").setAttribute("disabled", "true")}
       
  
