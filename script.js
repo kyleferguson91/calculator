@@ -14,7 +14,7 @@ function add (a,b) {
 function subtract (a,b) {
    
     console.log(+a - +b)
-   screen.textContent = +a - +b
+    screen.textContent =  parseFloat((+a - +b).toFixed(7))
     return +a - +b
 }
 
@@ -133,9 +133,9 @@ window.addEventListener('', e => {
 
 })
 
-window.addEventListener("keypress", e=> {
+window.addEventListener("keydown", e=> {
 
-
+console.log(e.key)
 
 if (!isNaN(parseInt(e.key))) {
     console.log(e.key)
@@ -155,6 +155,18 @@ else if (e.key == "Enter") {
     operate(operand, value1, current ) 
     document.getElementById("dec").setAttribute("disabled", "false")
  
+
+}
+
+else if (e.key == "Backspace") {
+    input = screen.textContent.split("")
+    if (input[input.length-1] == ".") {
+        document.getElementById("dec").removeAttribute("disabled")
+    }
+   
+     input.pop()
+     screen.textContent = input.join("")
+        console.log(input)
 
 }
 
@@ -218,7 +230,7 @@ buttons.forEach((elem,ind,arr) => {
         let displayValue = e.target.textContent
 
         if (e.target.textContent == "AC") {
-            document.getElementById("dec").setAttribute("disabled", "false")
+            document.getElementById("dec").removeAttribute("disabled", "false");
             screen.textContent = "0"
             input = []
             console.log(input)
@@ -244,7 +256,11 @@ buttons.forEach((elem,ind,arr) => {
 
 
         else if (e.target.textContent == "<") {
-       
+            input = screen.textContent.split("")
+            if (input[input.length-1] == ".") {
+                document.getElementById("dec").removeAttribute("disabled")
+            }
+           
              input.pop()
              screen.textContent = input.join("")
                 console.log(input)
@@ -280,7 +296,10 @@ buttons.forEach((elem,ind,arr) => {
             console.log(operand,value1,current, "operand, value1, current")
             value1 = +value1
             current = +current
+            
             operate(operand, value1, current ) 
+  
+            console.log(input)
             document.getElementById("dec").setAttribute("disabled", "false")
          
            

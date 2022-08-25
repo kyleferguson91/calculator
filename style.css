@@ -11,14 +11,21 @@
     border: 2px solid red;
     height: 20%;
     margin-bottom: 20px;
-
+    display: flex;
+    align-items: center;
+    justify-content: right;
     text-align: right;
+    
     background-color: bisque;
 }
 
 .screen p {
     color: black;
-    font-size: 50px;
+    font-size: 100px;
+}
+
+.screen-texts {
+    margin-bottom: 50px;
 }
 
 button {
