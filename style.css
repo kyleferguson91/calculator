@@ -12,21 +12,24 @@
     height: 20%;
     margin-bottom: 20px;
     display: flex;
-    align-items: center;
+    flex-flow: column nowrap;
+    align-items: flex-end;
     justify-content: right;
     text-align: right;
-    
+    overflow: hidden;
     background-color: bisque;
+    justify-content: space-between;
 }
 
 .screen p {
     color: black;
-    font-size: 100px;
+    font-size: 70px;
 }
 
 .screen-texts {
     margin-bottom: 50px;
 }
+
 
 button {
     width: auto;
@@ -131,6 +134,29 @@ border-radius: 50%;
     margin: 0;
 }
 
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 .operators {
     background-color: orange;
+}
+
+.eqtext {
+    margin: 0;
+    display: block;
+    font-size: 30px;
+}
+
+
+#eqtext {
+
+    font-size: 30px;
+    color: smoke;
+}
+
+.screentexts {
+    margin: 0;
+    display: block;
 }
