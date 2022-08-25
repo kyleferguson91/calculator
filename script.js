@@ -142,10 +142,12 @@ window.addEventListener("keydown", e => {
     else if (e.key == ".") {
         console.log("decimal here")
      
-        if (input.indexOf(".") >= 0) {
+        if (input.indexOf(".") >= 0 || screen.textContent.indexOf(".") >=0) {
             screen.textContent == screen.textContent
 
         }
+
+
         else {  
              screen.textContent += e.key
             input.push(e.key)
