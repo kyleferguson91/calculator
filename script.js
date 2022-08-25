@@ -3,7 +3,7 @@ const screen = document.querySelector(".screentexts")
 const lcd = document.querySelector(".screen")
 const buttons = document.querySelectorAll("button")
 const calcbody = document.querySelector(".calculatorbody")
-
+const innerline = document.querySelector(".eqtext")
 
 let input = []
 let operand = "";
@@ -99,6 +99,7 @@ window.addEventListener("keydown", e => {
         current = +current
             document.getElementById("dec").setAttribute("disabled", "false")
             operate(operand, value1, current)
+            innerline.textContent += ` ${current}`
     }
 
     else if (e.key == "Backspace") {
@@ -127,7 +128,10 @@ window.addEventListener("keydown", e => {
         screen.textContent = ""
 
         input = []
+        innerline.textContent = `${value1} ${operand}`
 
+
+       
 
 
 
@@ -140,6 +144,7 @@ window.addEventListener("keydown", e => {
      
         if (input.indexOf(".") >= 0) {
             screen.textContent == screen.textContent
+
         }
         else {  
              screen.textContent += e.key
@@ -161,7 +166,7 @@ window.addEventListener("keydown", e => {
 
 
 
-//const innerline = document.querySelector(".eqtext")
+//
 
 buttons.forEach((elem, ind, arr) => {
 
@@ -177,6 +182,7 @@ buttons.forEach((elem, ind, arr) => {
         let displayValue = e.target.textContent
 
         if (e.target.textContent == "AC") {
+            innerline.textContent = ""
             e.target.blur
             document.getElementById("dec").removeAttribute("disabled", "false");
             input = [0]
@@ -220,6 +226,10 @@ buttons.forEach((elem, ind, arr) => {
             e.target.textContent == "*" ||
             e.target.textContent == "/" ||
             e.target.textContent == "%") {
+
+
+
+
             document.getElementById("dec").removeAttribute("disabled")
 
             //innerline.textContent = input.join("")+ " " +e.target.textContent + " "
@@ -230,7 +240,7 @@ buttons.forEach((elem, ind, arr) => {
 
             input = []
 
-
+            innerline.textContent = `${value1} ${operand}`
 
 
 
@@ -252,7 +262,7 @@ buttons.forEach((elem, ind, arr) => {
             console.log(input)
             document.getElementById("dec").setAttribute("disabled", "false")
 
-
+            innerline.textContent += `${current}`
 
 
         }
